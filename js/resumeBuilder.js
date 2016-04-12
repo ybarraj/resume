@@ -26,16 +26,31 @@ var work = {
 	{
 		"employer" : "Vivint", 
 		"title" : "Sales Manager",
+		"location" : "Provo, UT",
 		"dates" : "January 2010- January 2015",
 		"description" : "I bla bla bla, and bla bla."
 	},
 	{
 		"employer" : "CityGro",
 		"title" : "Sales Person",
+		"location" : "Salt Lake City, UT",
 		"dates" : "November 2015- March 2015",
 		"description" : "I did stuff and then more stuff."
 	}]
 };
+
+function locationizer(work_obj) {
+	var locationArray = [];
+
+	for (job in work_obj.jobs){
+		var newLocation = work_obj.jobs[job].location;
+		locationArray.push(newLocation);
+	}
+
+	return locationArray;
+}
+
+console.log(locationizer(work));
 
 function displayWork() {
 	for(job in work.jobs) {
