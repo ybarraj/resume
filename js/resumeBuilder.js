@@ -164,8 +164,8 @@ var projects = {
 		"dates" : "2014",
 		"description" : "This was my bla bla bal project.",
 		"images" : [
-		"http://media.dcentertainment.com/sites/default/files/GalleryChar_1900x900_MOS_52e05e3fe24a61.04593858.jpg",
-		"http://vignette1.wikia.nocookie.net/dcmovies/images/3/36/Superman_MoS_promo.png/revision/latest?cb=20130424174431"
+		"http://files.gamebanana.com/img/ico/sprays/superman.png",
+		"https://s-media-cache-ak0.pinimg.com/736x/c1/1f/11/c11f11731ab12ac3e8e8b0e186c8f1c1.jpg"
 		]
 	}]
 };
@@ -195,8 +195,6 @@ projects.display()
 
 
 
-
-
 //loging the clicks on the website
 
 $(document).click(function(loc){
@@ -205,6 +203,7 @@ $(document).click(function(loc){
 
 	logClicks(x,y);
 });
+
 
 function locationizer(work_obj) {
 	var locationArray = [];
