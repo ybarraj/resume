@@ -114,21 +114,6 @@ function displayEducation() {
 
 		var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
 		$(".education-entry:last").append(formattedOnlineURL);
-
-
-		// var formattedSchoolName = HTMLschoolName.replace("%data%", education.onlineCourses[school].name);
-		// $(".education-entry:last").append(formattedSchoolName);
-
-		// var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.onlineCourses[school].dates);
-		// $(".education-entry:last").append(formattedSchoolDates);
-
-		// var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.onlineCourses[school].location);
-		// $(".education-entry:last").append(formattedSchoolLocation);
-
-
-
-		// var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.onlineCourses[school].major);
-		// $(".education-entry:last").append(formattedSchoolMajor);
 	}
 }
 
@@ -237,40 +222,6 @@ console.log(locationizer(work));
 
 
 
-
-
-
-
-
-
-
-
-
-// education["name"] = "Nova Southeastern University";
-// education["years"] = "2005-2013";
-// education["city"] = "Fort Lauderdale, FL, US";
-
-// $("#main").append(work["position"]);
-// $("#main").append(education.name);
-
-// function displayWork() {
-// 	for (job in work.jobs)
-// 		//create new div for work experirence 
-// 		$("workExperience").append(HTMLworkStart);
-// 		// concat employer and title
-// 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-// 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-// 		var formattedEmployerTitle = formattedEmployer + formattedTitle;
-// 		$(".work-entry:last").append(formattedEmployerTitle);
-
-// 		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-// 		$(".work-entry:last").append(formattedDates);
-
-// 		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-// 		$(".work-entry:last").append(formattedDescription);
-
-// }
-// displayWork();
 
 
 
