@@ -80,7 +80,47 @@ var education = {
 		"url" : "www.udacity.com"
 	}]
 };
-//Need a line to display education stuff
+
+function displayEducation() {
+	for(school in education.schools) {
+		$("#education").append(HTMLschoolStart);
+
+		var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		$(".education-entry:last").append(formattedSchoolName);
+
+		var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+		$(".education-entry:last").append(formattedSchoolDates);
+
+		var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+		$(".education-entry:last").append(formattedSchoolLocation);
+
+		var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+		$(".education-entry:last").append(formattedSchoolDegree);
+
+		var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+		$(".education-entry:last").append(formattedSchoolMajor);
+	}
+	// 	for(school in education.schools) {
+	// 	$("#education").append(HTMLschoolStart);
+
+	// 	var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+	// 	$(".education-entry:last").append(formattedSchoolName);
+
+	// 	var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+	// 	$(".education-entry:last").append(formattedSchoolDates);
+
+	// 	var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+	// 	$(".education-entry:last").append(formattedSchoolLocation);
+
+	// 	var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+	// 	$(".education-entry:last").append(formattedSchoolDegree);
+
+	// 	var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+	// 	$(".education-entry:last").append(formattedSchoolMajor);
+	// }
+}
+
+displayEducation();
 
 
 var work = {
