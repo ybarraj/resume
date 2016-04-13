@@ -24,6 +24,12 @@ function displaybio() {
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	$("#header").prepend(formattedName);
 
+	var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+	$("#header:last").append(formattedBioPic);
+
+	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	$("#header:last").append(formattedWelcomeMsg);
+
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
 	$("#header:last").append(formattedMobile);
 
@@ -38,6 +44,7 @@ function displaybio() {
 
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
 	$("#header:last").append(formattedLocation);
+
 
 
 };
