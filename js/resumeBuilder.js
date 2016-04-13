@@ -15,56 +15,50 @@ var bio = {
 	"skills" : ["Coding", "Teaching", "Closing","Awesomeness"],
 	"bioPic" : "http://vignette4.wikia.nocookie.net/batman/images/8/8f/Christian_Bale_as_The_Dark_Knight.jpg/revision/latest?cb=20140208170841"
 };
+	function displaybio() {
 
-function displaybio() {
+		var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+		$("#header").prepend(formattedRole);
 
-	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-	$("#header").prepend(formattedRole);
+		var formattedName = HTMLheaderName.replace("%data%", bio.name);
+		$("#header").prepend(formattedName);
 
-	var formattedName = HTMLheaderName.replace("%data%", bio.name);
-	$("#header").prepend(formattedName);
+		var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+		$("#header:last").append(formattedBioPic);
 
-	var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-	$("#header:last").append(formattedBioPic);
+		var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+		$("#header:last").append(formattedWelcomeMsg);
 
-	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-	$("#header:last").append(formattedWelcomeMsg);
+		var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
+		$("#header:last").append(formattedMobile);
 
-	var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
-	$("#header:last").append(formattedMobile);
+		var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
+		$("#header:last").append(formattedEmail);
 
-	var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
-	$("#header:last").append(formattedEmail);
+		var formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
+		$("#header:last").append(formattedGithub);
 
-	var formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
-	$("#header:last").append(formattedGithub);
+		var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
+		$("#header:last").append(formattedTwitter);
 
-	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
-	$("#header:last").append(formattedTwitter);
+		var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
+		$("#header:last").append(formattedLocation);
 
-	var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
-	$("#header:last").append(formattedLocation);
+		if(bio.skills.length > 0) {
+			$("#header").append(HTMLskillsStart);
 
-
-
-};
+			var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+			$("#skills").append(formattedSkill);
+			formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+			$("#skills").append(formattedSkill);
+			formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+			$("#skills").append(formattedSkill);
+			formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+			$("#skills").append(formattedSkill);
+		};
+	};
 
 displaybio();
-
-if(bio.skills.length > 0) {
-	$("#header").append(HTMLskillsStart);
-
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-	$("#skills").append(formattedSkill);
-};
-
-//Need a line to display the bio stuff. 
 
 var education = {
 	"schools" : [
