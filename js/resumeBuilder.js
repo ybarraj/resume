@@ -1,9 +1,5 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
 
 
-var skills = ["Coding", "Teaching", "Closing","Awesomeness"]
 
 var bio = {
 	"name" : "Joseph",
@@ -15,10 +11,34 @@ var bio = {
 		"twitter" : "mytweet@twitter.com",
 		"location" : "USA, Nowhere"
 	} ,
-	"bioPic" : "http://vignette4.wikia.nocookie.net/batman/images/8/8f/Christian_Bale_as_The_Dark_Knight.jpg/revision/latest?cb=20140208170841" ,
 	"welcomeMessage" : "Hi, everyone bla bla bla", 
-	"skills" : skills 
+	"skills" : ["Coding", "Teaching", "Closing","Awesomeness"],
+	"bioPic" : "http://vignette4.wikia.nocookie.net/batman/images/8/8f/Christian_Bale_as_The_Dark_Knight.jpg/revision/latest?cb=20140208170841"
+	
 };
+
+//Need a line to display the bio stuff. 
+
+var education = {
+	"schools" : [
+	{
+		"name" : "Brigham Young University", 
+		"location" : "Provo, UT",
+		"degree" : "Bachelor's", 
+		"major" : "BGS Business", 
+		"dates" : 2013, 
+		"url" : "www.byu.edu"
+	}
+	],
+	"onlineCourses": [
+	{
+		"title" : "Intro to coding",
+		"school" : "Udacity",
+		"dates" : "2016",
+		"url" : "www.udacity.com"
+	}]
+};
+//Need a line to display education stuff
 
 
 var work = {
@@ -39,18 +59,7 @@ var work = {
 	}]
 };
 
-function locationizer(work_obj) {
-	var locationArray = [];
-
-	for (job in work_obj.jobs){
-		var newLocation = work_obj.jobs[job].location;
-		locationArray.push(newLocation);
-	}
-
-	return locationArray;
-}
-
-console.log(locationizer(work));
+//need to combine these two somehow ^
 
 function displayWork() {
 	for(job in work.jobs) {
@@ -72,6 +81,7 @@ function displayWork() {
 
 displayWork();
 
+
 var projects = {
 	"projects" : [
 	{
@@ -84,6 +94,8 @@ var projects = {
 		]
 	}]
 };
+
+//need to combine these two 
 
 projects.display = function() {
 	for (project in projects.projects) {
@@ -110,25 +122,6 @@ projects.display = function() {
 projects.display()
 
 
-var education = {
-	"schools" : [
-	{
-		"name" : "Brigham Young University", 
-		"city" : "Provo, UT",
-		"degree" : "Bachelor's", 
-		"major" : "BGS Business", 
-		"dates" : 2013, 
-		"url" : "www.byu.edu"
-	}
-	],
-	"onlineCourses": [
-	{
-		"title" : "Intro to coding",
-		"school" : "Udacity",
-		"dates" : "2016",
-		"url" : "www.udacity.com"
-	}]
-};
 
 if(bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
@@ -143,7 +136,7 @@ if(bio.skills.length > 0) {
 	$("#skills").append(formattedSkill);
 };
 
-
+//loging the clicks on the website
 
 $(document).click(function(loc){
 	var x = loc.pageX;
@@ -156,11 +149,9 @@ $(document).click(function(loc){
 
 
 var role = "Web Developer"
-
 var name = "Joseph Ybarra"
 
 var formattedName = HTMLheaderName.replace("%data%", name);
-
 var formattedRole = HTMLheaderRole.replace("%data%", role);
 
 $("#header").prepend(formattedRole);
@@ -169,7 +160,18 @@ $("#header").prepend(formattedName);
 
 
 
+function locationizer(work_obj) {
+	var locationArray = [];
 
+	for (job in work_obj.jobs){
+		var newLocation = work_obj.jobs[job].location;
+		locationArray.push(newLocation);
+	}
+
+	return locationArray;
+}
+
+console.log(locationizer(work));
 
 
 
