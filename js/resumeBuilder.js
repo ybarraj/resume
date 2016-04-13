@@ -221,7 +221,9 @@ function locationizer(work_obj) {
 console.log(locationizer(work));
 
 
+// adds the google map
 
+$("#mapDiv").append(googleMap);
 
 
 
