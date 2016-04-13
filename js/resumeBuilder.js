@@ -14,7 +14,47 @@ var bio = {
 	"welcomeMessage" : "Hi, everyone bla bla bla", 
 	"skills" : ["Coding", "Teaching", "Closing","Awesomeness"],
 	"bioPic" : "http://vignette4.wikia.nocookie.net/batman/images/8/8f/Christian_Bale_as_The_Dark_Knight.jpg/revision/latest?cb=20140208170841"
-	
+};
+
+function displaybio() {
+
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").prepend(formattedRole);
+
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	$("#header").prepend(formattedName);
+
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
+	$("#header:last").append(formattedMobile);
+
+	var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
+	$("#header:last").append(formattedEmail);
+
+	var formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
+	$("#header:last").append(formattedGithub);
+
+	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
+	$("#header:last").append(formattedTwitter);
+
+	var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
+	$("#header:last").append(formattedLocation);
+
+
+};
+
+displaybio();
+
+if(bio.skills.length > 0) {
+	$("#header").append(HTMLskillsStart);
+
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+	$("#skills").append(formattedSkill);
 };
 
 //Need a line to display the bio stuff. 
@@ -123,18 +163,7 @@ projects.display()
 
 
 
-if(bio.skills.length > 0) {
-	$("#header").append(HTMLskillsStart);
 
-	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-	$("#skills").append(formattedSkill);
-	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-	$("#skills").append(formattedSkill);
-};
 
 //loging the clicks on the website
 
@@ -144,21 +173,6 @@ $(document).click(function(loc){
 
 	logClicks(x,y);
 });
-
-
-
-
-var role = "Web Developer"
-var name = "Joseph Ybarra"
-
-var formattedName = HTMLheaderName.replace("%data%", name);
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
-
-
 
 function locationizer(work_obj) {
 	var locationArray = [];
