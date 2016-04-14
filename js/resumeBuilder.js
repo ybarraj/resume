@@ -1,6 +1,5 @@
 
 
-
 var bio = {
 	"name" : "Joseph",
 	"role" : "Web Developer",
@@ -55,8 +54,8 @@ var bio = {
 			$("#skills").append(formattedSkill);
 			formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
 			$("#skills").append(formattedSkill);
-		};
-	};
+		}
+	}
 
 displaybio();
 
@@ -82,7 +81,7 @@ var education = {
 };
 
 	function displayEducation() {
-		for(school in education.schools) {
+		for(var school in education.schools) {
 			$("#education").append(HTMLschoolStart);
 
 			var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
@@ -100,7 +99,7 @@ var education = {
 			var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
 			$(".education-entry:last").append(formattedSchoolMajor);
 		}
-		for(course in education.onlineCourses) {
+		for(var course in education.onlineCourses) {
 			$(".education-entry:last").append(HTMLonlineClasses);
 
 			var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
@@ -138,7 +137,7 @@ var work = {
 	}]
 };
 	function displayWork() {
-		for(job in work.jobs) {
+		for(var job in work.jobs) {
 			$("#workExperience").append(HTMLworkStart);
 
 			var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -153,7 +152,7 @@ var work = {
 			var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 			$(".work-entry:last").append(formattedDescription);
 		}
-	};
+	}
 
 displayWork();
 
@@ -172,7 +171,7 @@ var projects = {
 };
 
 	projects.display = function() {
-		for (project in projects.projects) {
+		for (var project in projects.projects) {
 			$("#projects").append(HTMLprojectStart);
 
 			var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
@@ -185,15 +184,15 @@ var projects = {
 			$(".project-entry:last").append(formattedDescription);
 
 			if (projects.projects[project].images.length > 0) {
-				for (image in projects.projects[project].images) {
+				for (var image in projects.projects[project].images) {
 					var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
 					$(".project-entry:last").append(formattedImage);
 				}
 			}
 		}
-	}
+	};
 
-projects.display()
+projects.display();
 
 
 
@@ -210,7 +209,7 @@ $(document).click(function(loc){
 function locationizer(work_obj) {
 	var locationArray = [];
 
-	for (job in work_obj.jobs){
+	for (var job in work_obj.jobs){
 		var newLocation = work_obj.jobs[job].location;
 		locationArray.push(newLocation);
 	}
@@ -224,8 +223,3 @@ console.log(locationizer(work));
 // adds the google map
 
 $("#mapDiv").append(googleMap);
-
-
-
-
-
