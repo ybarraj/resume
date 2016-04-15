@@ -2,7 +2,7 @@
 var bio = {
     "name": "Joseph",
     "role": "Web Developer",
-    "contact": {
+    "contacts": {
         "mobile": "939-939-3939",
         "email": "fake@fakestreet.com",
         "github": "mygithub.com",
@@ -28,19 +28,19 @@ bio.display = function() {
     var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(formattedWelcomeMsg);
 
-    var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     $("#header").append(formattedMobile);
 
-    var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     $("#header").append(formattedEmail);
 
-    var formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
     $("#header").append(formattedGithub);
 
-    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
     $("#header").append(formattedTwitter);
 
-    var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#header").append(formattedLocation);
 
     if (bio.skills.length > 0) {
