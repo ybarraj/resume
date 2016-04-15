@@ -65,8 +65,8 @@ var education = {
         "name": "Brigham Young University",
         "location": "Provo, UT",
         "degree": "Bachelor's",
-        "major": "BGS Business",
-        "dates": 2013,
+        "majors": ["BGS Business"],
+        "dates": "2013",
         "url": "www.byu.edu"
     }],
     "onlineCourses": [{
@@ -93,7 +93,7 @@ education.display = function() {
         var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
         $(".education-entry:last").append(formattedSchoolDegree);
 
-        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
         $(".education-entry:last").append(formattedSchoolMajor);
     }
     for (var course in education.onlineCourses) {
