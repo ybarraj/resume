@@ -77,7 +77,7 @@ var education = {
     "onlineCourses": [{
         "title": "Intro to coding",
         "school": "Udacity",
-        "dates": "2016",
+        "date": "2016",
         "url": "www.udacity.com"
     }]
 };
@@ -110,7 +110,7 @@ education.display = function() {
         var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
         $(".education-entry:last").append(formattedOnlineSchool);
 
-        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
+        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].date);
         $(".education-entry:last").append(formattedOnlineDates);
 
         var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
