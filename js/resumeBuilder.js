@@ -23,25 +23,25 @@ bio.display = function() {
     $("#header").prepend(formattedName);
 
     var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
-    $("#header:last").append(formattedBioPic);
+    $("#header").append(formattedBioPic);
 
     var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $("#header:last").append(formattedWelcomeMsg);
+    $("#header").append(formattedWelcomeMsg);
 
     var formattedMobile = HTMLmobile.replace("%data%", bio.contact.mobile);
-    $("#header:last").append(formattedMobile);
+    $("#header").append(formattedMobile);
 
     var formattedEmail = HTMLemail.replace("%data%", bio.contact.email);
-    $("#header:last").append(formattedEmail);
+    $("#header").append(formattedEmail);
 
     var formattedGithub = HTMLgithub.replace("%data%", bio.contact.github);
-    $("#header:last").append(formattedGithub);
+    $("#header").append(formattedGithub);
 
     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contact.twitter);
-    $("#header:last").append(formattedTwitter);
+    $("#header").append(formattedTwitter);
 
     var formattedLocation = HTMLlocation.replace("%data%", bio.contact.location);
-    $("#header:last").append(formattedLocation);
+    $("#header").append(formattedLocation);
 
     if (bio.skills.length > 0) {
         $("#header").append(HTMLskillsStart);
