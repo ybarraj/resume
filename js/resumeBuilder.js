@@ -11,10 +11,10 @@ var bio = {
     },
     "welcomeMessage": "Hi, everyone bla bla bla",
     "skills": ["Coding", "Teaching", "Closing", "Awesomeness"],
-    "bioPic": "http://vignette4.wikia.nocookie.net/batman/images/8/8f/Christian_Bale_as_The_Dark_Knight.jpg/revision/latest?cb=20140208170841"
+    "biopic": "http://vignette4.wikia.nocookie.net/batman/images/8/8f/Christian_Bale_as_The_Dark_Knight.jpg/revision/latest?cb=20140208170841"
 };
 
-function displaybio() {
+bio.display = function() {
 
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
     $("#header").prepend(formattedRole);
@@ -22,7 +22,7 @@ function displaybio() {
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
     $("#header").prepend(formattedName);
 
-    var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+    var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
     $("#header:last").append(formattedBioPic);
 
     var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
@@ -55,9 +55,9 @@ function displaybio() {
         formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
         $("#skills").append(formattedSkill);
     }
-}
+};
 
-displaybio();
+bio.display();
 
 
 var education = {
@@ -77,7 +77,7 @@ var education = {
     }]
 };
 
-function displayEducation() {
+education.display = function() {
     for (var school in education.schools) {
         $("#education").append(HTMLschoolStart);
 
@@ -111,9 +111,9 @@ function displayEducation() {
         var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
         $(".education-entry:last").append(formattedOnlineURL);
     }
-}
+};
 
-displayEducation();
+education.display();
 
 
 var work = {
@@ -132,7 +132,7 @@ var work = {
     }]
 };
 
-function displayWork() {
+work.display = function() {
     for (var job in work.jobs) {
         $("#workExperience").append(HTMLworkStart);
 
@@ -148,9 +148,9 @@ function displayWork() {
         var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
         $(".work-entry:last").append(formattedDescription);
     }
-}
+};
 
-displayWork();
+work.display();
 
 
 var projects = {
